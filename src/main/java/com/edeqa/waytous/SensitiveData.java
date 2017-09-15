@@ -1,3 +1,9 @@
+/*
+ * Part of Waytous <http://waytous.net>
+ * Copyright (C) Edeqa LLC <http://www.edeqa.com>
+ *
+ * Created 1/13/17.
+ */
 package com.edeqa.waytous;
 
 import org.json.JSONArray;
@@ -16,10 +22,6 @@ import java.util.LinkedHashMap;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-/**
- * Created 1/13/17.
- */
 
 @SuppressWarnings("HardCodedStringLiteral")
 public class SensitiveData {
@@ -118,77 +120,77 @@ public class SensitiveData {
         ArrayList<HashMap<String, Serializable>> commonTypes = new ArrayList<>();
         HashMap<String,Serializable> type = new HashMap<>();
         type.put("type", "html");
-        type.put("mime", Constants.MIME.TEXT_HTML);
+        type.put("mime", Mime.TEXT_HTML);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "js");
-        type.put("mime", Constants.MIME.APPLICATION_JAVASCRIPT);
+        type.put("mime", Mime.APPLICATION_JAVASCRIPT);
         type.put("text", true);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "css");
-        type.put("mime", Constants.MIME.TEXT_CSS);
+        type.put("mime", Mime.TEXT_CSS);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "xml");
-        type.put("mime", Constants.MIME.APPLICATION_XML);
+        type.put("mime", Mime.APPLICATION_XML);
         type.put("text", true);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("name", "manifest.json");
-        type.put("mime", Constants.MIME.APPLICATION_X_WEB_APP_MANIFEST_JSON);
+        type.put("mime", Mime.APPLICATION_X_WEB_APP_MANIFEST_JSON);
         type.put("text", true);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "json");
-        type.put("mime", Constants.MIME.APPLICATION_JSON);
+        type.put("mime", Mime.APPLICATION_JSON);
         type.put("text", true);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "gif");
-        type.put("mime", Constants.MIME.IMAGE_GIF);
+        type.put("mime", Mime.IMAGE_GIF);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "png");
-        type.put("mime", Constants.MIME.IMAGE_PNG);
+        type.put("mime", Mime.IMAGE_PNG);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "jpg");
-        type.put("mime", Constants.MIME.IMAGE_JPG);
+        type.put("mime", Mime.IMAGE_JPG);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "ico");
-        type.put("mime", Constants.MIME.IMAGE_ICO);
+        type.put("mime", Mime.IMAGE_ICO);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "svg");
-        type.put("mime", Constants.MIME.IMAGE_SVG_XML);
+        type.put("mime", Mime.IMAGE_SVG_XML);
         type.put("text", true);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "mp3");
-        type.put("mime", Constants.MIME.AUDIO_MP3);
+        type.put("mime", Mime.AUDIO_MP3);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "ogg");
-        type.put("mime", Constants.MIME.AUDIO_OGG);
+        type.put("mime", Mime.AUDIO_OGG);
         commonTypes.add(type);
 
         type = new HashMap<>();
         type.put("type", "m4r");
-        type.put("mime", Constants.MIME.AUDIO_AAC);
+        type.put("mime", Mime.AUDIO_AAC);
         commonTypes.add(type);
 
         for(int i=0; i<types.length(); i++) {

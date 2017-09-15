@@ -6,7 +6,7 @@
  */
 package com.edeqa.waytous;
 
-@SuppressWarnings("HardCodedStringLiteral")
+@SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
 public class Rest {
     public static final String STATUS = "status",
             SUCCESS = "success",

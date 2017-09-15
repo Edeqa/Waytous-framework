@@ -6,7 +6,7 @@
  */
 package com.edeqa.waytous;
 
-@SuppressWarnings("HardCodedStringLiteral")
+@SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
 public class Constants {
 
     public static SensitiveData SENSITIVE;

@@ -6,9 +6,9 @@
  */
 package com.edeqa.waytous;
 
-@SuppressWarnings("HardCodedStringLiteral")
+@SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
 public class Mime {
-    static final String APPLICATION_JSON = "application/json",
+    public static final String APPLICATION_JSON = "application/json",
             TEXT_PLAIN = "text/plain",
             TEXT_HTML = "text/html",
             APPLICATION_OCTET_STREAM = "application/octet-stream",

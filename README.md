@@ -43,11 +43,7 @@ Step 2. Add the dependency:
 
 ## How to use
 
-See the [Javadoc](https://edeqa.github.io/waytous-framework/javadoc/) for more details about the API.
-
-
-## Troubleshooting
-
+See the [Javadoc](https://edeqa.github.io/waytous-framework/javadoc/) to learn more about the API.
 
 ## History
 

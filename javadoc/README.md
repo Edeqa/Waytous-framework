@@ -1,3 +1,3 @@
 ## Javadoc
 
-See the [Javadoc](https://edeqa.github.io/waytous-framework/javadoc/) for more details about the API.
+See the [Javadoc](https://edeqa.github.io/Waytous-framework/javadoc/) for more details about the API.

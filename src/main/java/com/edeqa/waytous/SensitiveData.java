@@ -6,6 +6,8 @@
  */
 package com.edeqa.waytous;
 
+import com.edeqa.helpers.Mime;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 

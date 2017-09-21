@@ -55,7 +55,6 @@ public class SensitiveData {
     }
 
     public SensitiveData(File file) {
-
         readWithFile(file);
     }
 

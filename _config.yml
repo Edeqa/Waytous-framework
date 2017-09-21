@@ -1,1 +1,6 @@
+title: Waytous-framwework
+description: Waytous application framework
 theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions

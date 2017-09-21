@@ -6,6 +6,13 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
 import static com.edeqa.waytous.Constants.SENSITIVE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -16,9 +23,11 @@ import static org.junit.Assert.assertTrue;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SensitiveDataTest {
 
+    String fileName = "WaytousServer/conf/developer/options_developer.json";
+
     @Before
     public void setUp() throws Exception {
-        SENSITIVE = new SensitiveData(new String[]{"WaytousServer/conf/developer/options_developer.json"});
+        SENSITIVE = new SensitiveData(new String[]{fileName});
     }
 
     @After
@@ -28,12 +37,47 @@ public class SensitiveDataTest {
 
     @Test
     public void constructor() throws Exception {
+        File file = new File("options.json");
+
+        // test for corrupted file
+        try(FileWriter writer = new FileWriter(file)) {
+            writer.write("-");
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        new SensitiveData(file);
+
+        // test for correct file
         new SensitiveData(new String[]{"-g"});
+        try (FileInputStream fis = new FileInputStream(file)) {
+            Reader reader = new InputStreamReader(fis);
+            new SensitiveData(reader);
+        }
+        new SensitiveData(file);
+
+        // test for non existing file
+        file = new File("options.json-fake");
+        new SensitiveData(file);
+
+        // test for wrong reader
+        Reader reader = new Reader() {
+            @Override
+            public int read(char[] chars, int i, int i1) throws IOException {
+                throw new IOException("Not found");
+            }
+            @Override
+            public void close() throws IOException {
+
+            }
+        };
+        new SensitiveData(reader);
+
     }
 
     @Test
-    public void getFirebaseWebApiKey() throws Exception {
-        assertTrue(SENSITIVE.getFirebaseWebApiKey().length()>0);
+    public void getFirebaseApiKey() throws Exception {
+        assertTrue(SENSITIVE.getFirebaseApiKey().length()>0);
     }
 
     @Test
@@ -78,7 +122,7 @@ public class SensitiveDataTest {
 
     @Test
     public void getServerHost() throws Exception {
-        assertEquals("192.168.1.151", SENSITIVE.getServerHost());
+        assertTrue(SENSITIVE.getServerHost().length() > 5);
     }
 
     @Test
@@ -123,7 +167,7 @@ public class SensitiveDataTest {
 
     @Test
     public void getHttpsAdminPort() throws Exception {
-        assertEquals(8989, SENSITIVE.getHttpsAdminPort());
+        assertTrue(SENSITIVE.getHttpsAdminPort() > 8980);
     }
 
     @Test

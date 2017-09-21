@@ -224,7 +224,7 @@ public class SensitiveData {
             map.set(jsonSample, new LinkedHashMap<>());
             map.setAccessible(false);//return flag
 
-            jsonSample.put("firebase_web_api_key","SAMPL");
+//            jsonSample.put("firebase_web_api_key","SAMPL");
             jsonSample.put("firebase_dynamic_link_host","SAMPL");
             jsonSample.put("firebase_private_key_file","SAMPL");
 
@@ -256,8 +256,13 @@ public class SensitiveData {
 
             JSONArray jsonMimeTypes = new JSONArray();
             JSONObject jsonMimeType = new JSONObject();
-            jsonMimeType.put("type","sample");
-            jsonMimeType.put("mime","text/sample");
+            jsonMimeType.put("type","ogg");
+            jsonMimeType.put("mime",Mime.AUDIO_OGG);
+            jsonMimeTypes.put(jsonMimeType);
+
+            jsonMimeType = new JSONObject();
+            jsonMimeType.put("name","manifest.json");
+            jsonMimeType.put("mime",Mime.APPLICATION_X_WEB_APP_MANIFEST_JSON);
             jsonMimeType.put("text",true);
             jsonMimeTypes.put(jsonMimeType);
 
@@ -268,20 +273,13 @@ public class SensitiveData {
 
         } catch (Exception e) {
             e.printStackTrace();
-//        } finally {
-//            try {
-//                writer.close();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
         }
 
-        LOGGER.info("Sample options file was generated into "+file.getAbsolutePath()+".\nModify it using your custom options and run again.\n");
-
+        LOGGER.severe(String.format("Sample options file was generated into %s.\nModify it using your custom options and run again.\n", file.getAbsolutePath()));
     }
 
-    public String getFirebaseWebApiKey() {
-        return json.getString("firebase_web_api_key");
+    public String getFirebaseApiKey() {
+        return getFirebaseConfig().getString("apiKey");
     }
 
     public String getFirebaseDynamicLinkHost() {
@@ -293,7 +291,7 @@ public class SensitiveData {
     }
 
     public String getFirebaseDatabaseUrl() {
-        return json.getJSONObject("firebase_config").getString("databaseURL");
+        return getFirebaseConfig().getString("databaseURL");
     }
 
     public String getSSLCertificatePassword() {

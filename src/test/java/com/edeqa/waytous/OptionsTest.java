@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-import static com.edeqa.waytous.Constants.SENSITIVE;
+import static com.edeqa.waytous.Constants.OPTIONS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -21,13 +21,13 @@ import static org.junit.Assert.assertTrue;
  * Created 9/21/17.
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class SensitiveDataTest {
+public class OptionsTest {
 
     String fileName = "WaytousServer/conf/developer/options_developer.json";
 
     @Before
     public void setUp() throws Exception {
-        SENSITIVE = new SensitiveData(new String[]{fileName});
+        OPTIONS = new Options(new String[]{fileName});
     }
 
     @After
@@ -46,19 +46,19 @@ public class SensitiveDataTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        new SensitiveData(file);
+        new Options(file);
 
         // test for correct file
-        new SensitiveData(new String[]{"-g"});
+        new Options(new String[]{"-g"});
         try (FileInputStream fis = new FileInputStream(file)) {
             Reader reader = new InputStreamReader(fis);
-            new SensitiveData(reader);
+            new Options(reader);
         }
-        new SensitiveData(file);
+        new Options(file);
 
         // test for non existing file
         file = new File("options.json-fake");
-        new SensitiveData(file);
+        new Options(file);
 
         // test for wrong reader
         Reader reader = new Reader() {
@@ -71,148 +71,148 @@ public class SensitiveDataTest {
 
             }
         };
-        new SensitiveData(reader);
+        new Options(reader);
 
     }
 
     @Test
     public void getFirebaseApiKey() throws Exception {
-        assertTrue(SENSITIVE.getFirebaseApiKey().length()>0);
+        assertTrue(OPTIONS.getFirebaseApiKey().length()>0);
     }
 
     @Test
     public void getFirebaseDynamicLinkHost() throws Exception {
-        assertTrue(SENSITIVE.getFirebaseDynamicLinkHost().contains("app.goo.gl"));
+        assertTrue(OPTIONS.getFirebaseDynamicLinkHost().contains("app.goo.gl"));
     }
 
     @Test
     public void getFirebasePrivateKeyFile() throws Exception {
-        assertTrue(SENSITIVE.getFirebasePrivateKeyFile().contains("firebase-adminsdk"));
+        assertTrue(OPTIONS.getFirebasePrivateKeyFile().contains("firebase-adminsdk"));
     }
 
     @Test
     public void getFirebaseDatabaseUrl() throws Exception {
-        assertTrue(SENSITIVE.getFirebaseDatabaseUrl().contains("firebaseio.com"));
+        assertTrue(OPTIONS.getFirebaseDatabaseUrl().contains("firebaseio.com"));
     }
 
     @Test
     public void getSSLCertificatePassword() throws Exception {
-        assertTrue(SENSITIVE.getSSLCertificatePassword().length()>0);
+        assertTrue(OPTIONS.getSSLCertificatePassword().length()>0);
     }
 
     @Test
     public void getFirebaseConfig() throws Exception {
-        assertTrue(SENSITIVE.getFirebaseConfig().toString().contains("storageBucket"));
-        assertTrue(SENSITIVE.getFirebaseConfig().toString().contains("apiKey"));
-        assertTrue(SENSITIVE.getFirebaseConfig().toString().contains("messagingSenderId"));
-        assertTrue(SENSITIVE.getFirebaseConfig().toString().contains("projectId"));
-        assertTrue(SENSITIVE.getFirebaseConfig().toString().contains("databaseURL"));
-        assertTrue(SENSITIVE.getFirebaseConfig().toString().contains("authDomain"));
+        assertTrue(OPTIONS.getFirebaseConfig().toString().contains("storageBucket"));
+        assertTrue(OPTIONS.getFirebaseConfig().toString().contains("apiKey"));
+        assertTrue(OPTIONS.getFirebaseConfig().toString().contains("messagingSenderId"));
+        assertTrue(OPTIONS.getFirebaseConfig().toString().contains("projectId"));
+        assertTrue(OPTIONS.getFirebaseConfig().toString().contains("databaseURL"));
+        assertTrue(OPTIONS.getFirebaseConfig().toString().contains("authDomain"));
     }
 
     @Test
     public void getLogin() throws Exception {
-        assertTrue(SENSITIVE.getLogin().length()>0);
+        assertTrue(OPTIONS.getLogin().length()>0);
     }
 
     @Test
     public void getPassword() throws Exception {
-        assertTrue(SENSITIVE.getPassword() != null);
+        assertTrue(OPTIONS.getPassword() != null);
     }
 
     @Test
     public void getServerHost() throws Exception {
-        assertTrue(SENSITIVE.getServerHost().length() > 5);
+        assertTrue(OPTIONS.getServerHost().length() > 5);
     }
 
     @Test
     public void getWsPortDedicated() throws Exception {
-        assertEquals(8100, SENSITIVE.getWsPortDedicated());
+        assertEquals(8100, OPTIONS.getWsPortDedicated());
     }
 
     @Test
     public void getWssPortDedicated() throws Exception {
-        assertEquals(8101, SENSITIVE.getWssPortDedicated());
+        assertEquals(8101, OPTIONS.getWssPortDedicated());
     }
 
     @Test
     public void getWsPortFirebase() throws Exception {
-        assertEquals(8200, SENSITIVE.getWsPortFirebase());
+        assertEquals(8200, OPTIONS.getWsPortFirebase());
     }
 
     @Test
     public void getWssPortFirebase() throws Exception {
-        assertEquals(8201, SENSITIVE.getWssPortFirebase());
+        assertEquals(8201, OPTIONS.getWssPortFirebase());
     }
 
     @Test
     public void getHttpPort() throws Exception {
-        assertEquals(8080, SENSITIVE.getHttpPort());
+        assertEquals(8080, OPTIONS.getHttpPort());
     }
 
     @Test
     public void getHttpsPort() throws Exception {
-        assertEquals(8443, SENSITIVE.getHttpsPort());
+        assertEquals(8443, OPTIONS.getHttpsPort());
     }
 
     @Test
     public void getHttpPortMasked() throws Exception {
-        assertEquals(8080, SENSITIVE.getHttpPortMasked());
+        assertEquals(8080, OPTIONS.getHttpPortMasked());
     }
 
     @Test
     public void getHttpsPortMasked() throws Exception {
-        assertEquals(8443, SENSITIVE.getHttpsPortMasked());
+        assertEquals(8443, OPTIONS.getHttpsPortMasked());
     }
 
     @Test
     public void getHttpsAdminPort() throws Exception {
-        assertTrue(SENSITIVE.getHttpsAdminPort() > 8980);
+        assertTrue(OPTIONS.getHttpsAdminPort() > 8980);
     }
 
     @Test
     public void getWebRootDirectory() throws Exception {
-        assertTrue(SENSITIVE.getWebRootDirectory().contains("Waytous"));
+        assertTrue(OPTIONS.getWebRootDirectory().contains("Waytous"));
     }
 
     @Test
     public void getKeystoreFilename() throws Exception {
-        assertTrue(SENSITIVE.getKeystoreFilename().contains(".jks"));
+        assertTrue(OPTIONS.getKeystoreFilename().contains(".jks"));
     }
 
     @Test
     public void isDebugMode() throws Exception {
-        assertEquals(true, SENSITIVE.isDebugMode());
+        assertEquals(true, OPTIONS.isDebugMode());
     }
 
     @Test
     public void isGzip() throws Exception {
-        assertTrue(SENSITIVE.isGzip());
+        assertTrue(OPTIONS.isGzip());
     }
 
     @Test
     public void getLogFile() throws Exception {
-        assertTrue(SENSITIVE.getLogFile().contains(".log"));
+        assertTrue(OPTIONS.getLogFile().contains(".log"));
     }
 
     @Test
     public void getTypes() throws Exception {
-        assertTrue(SENSITIVE.getTypes().toString().contains("mime"));
+        assertTrue(OPTIONS.getTypes().toString().contains("mime"));
     }
 
     @Test
     public void getAppName() throws Exception {
-        assertEquals("Waytous", SENSITIVE.getAppName());
+        assertEquals("Waytous", OPTIONS.getAppName());
     }
 
     @Test
     public void getAppLink() throws Exception {
-        assertEquals("http://waytous.net", SENSITIVE.getAppLink());
+        assertEquals("http://waytous.net", OPTIONS.getAppLink());
     }
 
     @Test
     public void getSupportEmail() throws Exception {
-        assertEquals("support@waytous.net", SENSITIVE.getSupportEmail());
+        assertEquals("support@waytous.net", OPTIONS.getSupportEmail());
     }
 
 }

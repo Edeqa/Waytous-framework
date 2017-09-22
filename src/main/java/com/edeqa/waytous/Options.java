@@ -26,13 +26,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @SuppressWarnings("HardCodedStringLiteral")
-public class SensitiveData {
+public class Options {
 
-    private final static Logger LOGGER = Logger.getLogger(SensitiveData.class.getName());
+    private final static Logger LOGGER = Logger.getLogger(Options.class.getName());
 
     private JSONObject json;
 
-    public SensitiveData(String[] args) {
+    public Options(String[] args) {
 
         File file = new File("options.json");
 
@@ -54,11 +54,11 @@ public class SensitiveData {
         readWithFile(file);
     }
 
-    public SensitiveData(File file) {
+    public Options(File file) {
         readWithFile(file);
     }
 
-    public SensitiveData(Reader reader) {
+    public Options(Reader reader) {
         try {
             readWithFileReader(reader);
         } catch (IOException e) {

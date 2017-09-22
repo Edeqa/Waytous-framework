@@ -9,7 +9,7 @@ package com.edeqa.waytous;
 @SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
 public class Constants {
 
-    public static SensitiveData SENSITIVE;
+    public static Options OPTIONS;
 
     public final static String BROADCAST = "com.edeqa.waytous.waytousservice";
     public final static String BROADCAST_MESSAGE = "message";

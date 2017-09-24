@@ -29,7 +29,7 @@ public class Constants {
     public static final String REQUEST_ADMIN = "admin";
 
     public static final String REQUEST_DEVICE_ID = "device_id";
-    public static final String REQUEST_USER_ID = "user_id";
+//    public static final String REQUEST_USER_ID = "user_id";
     public static final String REQUEST_MODEL = "model";
     public static final String REQUEST_MANUFACTURER = "manufacturer";
     public static final String REQUEST_OS = "os";

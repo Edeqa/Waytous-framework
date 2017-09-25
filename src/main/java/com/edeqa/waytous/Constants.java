@@ -28,13 +28,12 @@ public class Constants {
     public static final String REQUEST_PUSH = "push";
     public static final String REQUEST_ADMIN = "admin";
 
-    public static final String REQUEST_DEVICE_ID = "device_id";
-//    public static final String REQUEST_USER_ID = "user_id";
+    public static final String REQUEST_UID = "uid";
     public static final String REQUEST_MODEL = "model";
     public static final String REQUEST_MANUFACTURER = "manufacturer";
     public static final String REQUEST_OS = "os";
     public static final String REQUEST_KEY = "key";
-    public static final String REQUEST_SIGN_PROVIDER = "sign_provider";
+    public static final String REQUEST_SIGN_PROVIDER = "sign-provider";
 
 // instances to/from server
     public static final String REQUEST_TRACKING = "tracking";

@@ -18,16 +18,16 @@ public class Firebase {
             CREATED = "created",
             CHANGED = "changed",
     
-            KEYS = "k", // keys
-            ORDER = "n", // users/order
+            KEYS = "k", // keys (users/keys)
+            ORDER = "n", // order (users/order)
 
             OPTIONS = "o", // options
-            OPTION_PERSISTENT = "persistent",
-            OPTION_TIME_TO_LIVE_IF_EMPTY = "time-to-live-if-empty",
-            OPTION_DELAY_TO_DISMISS = "delay-to-dismiss",
-            OPTION_DISMISS_INACTIVE = "dismiss-inactive",
-            OPTION_REQUIRES_PASSWORD = "requires-password",
-            OPTION_WELCOME_MESSAGE = "welcome-message",
+            PERSISTENT = "persistent",
+            TIME_TO_LIVE_IF_EMPTY = "time-to-live-if-empty",
+            DELAY_TO_DISMISS = "delay-to-dismiss",
+            DISMISS_INACTIVE = "dismiss-inactive",
+            REQUIRES_PASSWORD = "requires-password",
+            WELCOME_MESSAGE = "welcome-message",
 
     SECTION_STAT = "_stat",
             STAT_TOTAL = "total",

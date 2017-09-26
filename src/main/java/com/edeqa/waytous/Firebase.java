@@ -15,8 +15,8 @@ public class Firebase {
             NAME = "name",
             ACTIVE = "active",
             COLOR = "color",
-            CREATED = "created",
-            CHANGED = "changed",
+            CREATED = "cr",
+            CHANGED = "ch",
     
             KEYS = "k", // keys (users/keys)
             ORDER = "n", // order (users/order)

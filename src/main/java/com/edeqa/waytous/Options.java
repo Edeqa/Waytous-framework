@@ -100,6 +100,7 @@ public class Options {
 
         if(!json.has("http_port_masked")) json.put("http_port_masked", json.getInt("http_port"));
         if(!json.has("http_secured_port_masked")) json.put("http_secured_port_masked", json.getInt("http_secured_port"));
+        if(!json.has("google_analytics_tracking_id")) json.put("google_analytics_tracking_id", "");
 
         if(!json.has("types")) {
             json.put("types",new JSONArray());
@@ -253,6 +254,7 @@ public class Options {
             jsonSample.put("debug_mode",false);
             jsonSample.put("gzip",true);
             jsonSample.put("log_file","waytous.log");
+            jsonSample.put("google_analytics_tracking_id","UA-XXXX-1");
 
             JSONArray jsonMimeTypes = new JSONArray();
             JSONObject jsonMimeType = new JSONObject();
@@ -388,6 +390,10 @@ public class Options {
 
     public String getSupportEmail() {
         return json.getString("support_email");
+    }
+
+    public String getGoogleAnalyticsTrackingId() {
+        return json.getString("google_analytics_tracking_id");
     }
 
 }

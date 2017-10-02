@@ -74,7 +74,7 @@ public class Options {
         }
 
         try(FileReader reader = new FileReader(file)) {
-            LOGGER.info("Read config from options file: " + file.getAbsoluteFile());
+//            LOGGER.info("Read config from options file: " + file.getAbsoluteFile());
             readWithFileReader(reader);
         } catch (Exception e) {
             LOGGER.severe("Options file "+file.getAbsolutePath()+" is corrupted or damaged.\nRun with key -g for generate the sample.\n" + e.getMessage());
@@ -101,6 +101,10 @@ public class Options {
         if(!json.has("http_port_masked")) json.put("http_port_masked", json.getInt("http_port"));
         if(!json.has("http_secured_port_masked")) json.put("http_secured_port_masked", json.getInt("http_secured_port"));
         if(!json.has("google_analytics_tracking_id")) json.put("google_analytics_tracking_id", "");
+
+        if(!json.has("pages")) {
+            json.put("pages",new JSONArray());
+        }
 
         if(!json.has("types")) {
             json.put("types",new JSONArray());
@@ -270,6 +274,11 @@ public class Options {
 
             jsonSample.put("types",jsonMimeTypes);
 
+            JSONArray jsonPages = new JSONArray();
+            jsonPages.put("home");
+            jsonMimeTypes.put(jsonPages);
+
+
             writer.write(jsonSample.toString(4));
             writer.close();
 
@@ -394,6 +403,10 @@ public class Options {
 
     public String getGoogleAnalyticsTrackingId() {
         return json.getString("google_analytics_tracking_id");
+    }
+
+    public JSONArray getPages() {
+        return json.getJSONArray("pages");
     }
 
 }

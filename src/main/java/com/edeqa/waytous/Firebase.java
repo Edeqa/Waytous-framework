@@ -9,42 +9,44 @@ package com.edeqa.waytous;
 @SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
 public class Firebase {
     public static final String SECTION_GROUPS = "_groups",
-            USERS = "u", // users
-            PUBLIC = "b", // public
-            PRIVATE = "p", // private
-            NAME = "name",
             ACTIVE = "active",
+            CHANGED = "ch",
             COLOR = "color",
             CREATED = "cr",
-            CHANGED = "ch",
-    
-            KEYS = "k", // keys (users/keys)
-            ORDER = "n", // order (users/order)
-
-            OPTIONS = "o", // options
-            PERSISTENT = "persistent",
-            TIME_TO_LIVE_IF_EMPTY = "time-to-live-if-empty",
             DELAY_TO_DISMISS = "delay-to-dismiss",
             DISMISS_INACTIVE = "dismiss-inactive",
+            KEYS = "k", // keys (users/keys)
+            NAME = "name",
+            OPTIONS = "o", // options
+            ORDER = "n", // order (users/order)
+            PERSISTENT = "persistent",
+            PRIVATE = "p", // private
+            PUBLIC = "b", // public
             REQUIRES_PASSWORD = "requires-password",
+            SYNCED = "sy",
+            TIME_TO_LIVE_IF_EMPTY = "time-to-live-if-empty",
+            TIMESTAMP = "t",
+            USERS = "u", // users
             WELCOME_MESSAGE = "welcome-message",
 
     SECTION_STAT = "_stat",
             STAT_TOTAL = "total",
             STAT_BY_DATE = "by-date",
-            STAT_GROUPS_CREATED_TEMPORARY = "gt",
             STAT_GROUPS_CREATED_PERSISTENT = "gp",
-            STAT_GROUPS_REJECTED = "gr",
+            STAT_GROUPS_CREATED_TEMPORARY = "gt",
             STAT_GROUPS_DELETED = "gd",
-            STAT_USERS_JOINED = "uj",
-            STAT_USERS_RECONNECTED = "uc",
-            STAT_USERS_REJECTED = "ur",
+            STAT_GROUPS_REJECTED = "gr",
             STAT_MESSAGES = "messages",
             STAT_MISC = "misc",
             STAT_MISC_GROUPS_CLEANED = "groups-cleaned",
+            STAT_USERS_JOINED = "uj",
+            STAT_USERS_RECONNECTED = "uc",
+            STAT_USERS_REJECTED = "ur",
 
     SECTION_USERS = "_users",
-            HISTORY = "h";
-    
-    
+            HISTORY = "h",
+            MODE = "m",
+            TERMS_OF_SERVICE_CONFIRMED = "tos-confirmed",
+            VALUE = "v";
+
 }

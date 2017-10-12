@@ -40,10 +40,13 @@ public class Firebase {
             STAT_MISC = "misc",
             STAT_ADMIN = "ad",
             STAT_MISC_GROUPS_CLEANED = "groups-cleaned",
+            STAT_MISC_ACCOUNTS_CLEANED = "accounts-cleaned",
             STAT_USERS_JOINED = "uj",
             STAT_USERS_RECONNECTED = "uc",
             STAT_USERS_REJECTED = "ur",
             STAT_USERS_REMOVED = "uv",
+            STAT_ACCOUNTS_CREATED = "cc",
+            STAT_ACCOUNTS_DELETED = "cd",
 
     SECTION_USERS = "_users",
             HISTORY = "h",

@@ -38,10 +38,12 @@ public class Firebase {
             STAT_GROUPS_REJECTED = "gr",
             STAT_MESSAGES = "messages",
             STAT_MISC = "misc",
+            STAT_ADMIN = "ad",
             STAT_MISC_GROUPS_CLEANED = "groups-cleaned",
             STAT_USERS_JOINED = "uj",
             STAT_USERS_RECONNECTED = "uc",
             STAT_USERS_REJECTED = "ur",
+            STAT_USERS_REMOVED = "uv",
 
     SECTION_USERS = "_users",
             HISTORY = "h",

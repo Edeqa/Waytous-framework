@@ -15,6 +15,7 @@ public class Rest {
         MESSAGE = "message",
         REQUEST = "request",
         GROUP_ID = "group_id",
+        UID = "uid",
         VALUE = "value",
         PROPERTY = "property",
         OLD_VALUE = "old_value",

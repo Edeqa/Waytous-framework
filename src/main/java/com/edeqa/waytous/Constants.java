@@ -11,10 +11,10 @@ public class Constants {
 
     public static Options OPTIONS;
 
-    public final static String BROADCAST = "com.edeqa.waytous.waytousservice";
-    public final static String BROADCAST_MESSAGE = "message";
+    public static final String BROADCAST = "com.edeqa.waytous.waytousservice";
+    public static final String BROADCAST_MESSAGE = "message";
 
-    public final static int LOCATION_UPDATES_DELAY = 1000;
+    public static final int LOCATION_UPDATES_DELAY = 1000;
 
 // client constants
     public static final String REQUEST = "client";
@@ -81,6 +81,6 @@ public class Constants {
 
     public static final int LIFETIME_REQUEST_TIMEOUT = 10;
     public static final int LIFETIME_INACTIVE_GROUP = 24 * 3600;
-    public final static int LIFETIME_INACTIVE_USER = 300;
+    public static final int LIFETIME_INACTIVE_USER = 300;
 
 }

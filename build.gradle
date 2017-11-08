@@ -10,7 +10,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'org.json:json:20160810'
     compile 'org.slf4j:slf4j-nop:1.7.25'
-    compile project(path: ':Helpers')
+    compile 'com.github.edeqa:helpers:master-SNAPSHOT'
 }
 
 task javaDoc (type: Javadoc) {

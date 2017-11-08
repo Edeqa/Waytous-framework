@@ -23,7 +23,7 @@ import static org.junit.Assert.assertTrue;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class OptionsTest {
 
-    String fileName = "WaytousServer/conf/developer/options_developer.json";
+    String fileName = "../conf/developer/options_developer.json";
 
     @Before
     public void setUp() throws Exception {

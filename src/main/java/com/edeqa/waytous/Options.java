@@ -276,8 +276,7 @@ public class Options {
 
             JSONArray jsonPages = new JSONArray();
             jsonPages.put("home");
-            jsonMimeTypes.put(jsonPages);
-
+            jsonSample.put("pages", jsonPages);
 
             writer.write(jsonSample.toString(4));
             writer.close();

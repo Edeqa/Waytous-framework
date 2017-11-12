@@ -8,14 +8,38 @@ package com.edeqa.waytous;
 
 @SuppressWarnings("HardCodedStringLiteral")
 public enum SignProvider {
-    GOOGLE("google.com"), FACEBOOK("facebook.com"), TWITTER("twitter.com"), NONE("anonymous"), PASSWORD("password");
+    GOOGLE("google.com"), FACEBOOK("facebook.com"), TWITTER("twitter.com"), NONE("anonymous"), PASSWORD("password"), ADMIN("admin");
     private String id;
 
     SignProvider(String id) {
         this.id = id;
     }
 
+    @Override
     public String toString() {
         return id;
     }
+
+    public static SignProvider parse(String signProvider) {
+            if(signProvider != null) {
+                switch(signProvider) {
+                    case "google.com":
+                        return GOOGLE;
+                    case "facebook.com":
+                        return FACEBOOK;
+                    case "twitter.com":
+                        return TWITTER;
+                    case "password":
+                        return PASSWORD;
+                    case "admin":
+                        return ADMIN;
+                    default:
+                        return NONE;
+                }
+            } else {
+                return NONE;
+            }
+
+    }
+
 }

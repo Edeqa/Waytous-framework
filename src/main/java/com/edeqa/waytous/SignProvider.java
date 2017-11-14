@@ -9,7 +9,7 @@ package com.edeqa.waytous;
 @SuppressWarnings("HardCodedStringLiteral")
 public enum SignProvider {
     GOOGLE("google.com"), FACEBOOK("facebook.com"), TWITTER("twitter.com"), NONE("anonymous"), PASSWORD("password"), ADMIN("admin");
-    private String id;
+    private final String id;
 
     SignProvider(String id) {
         this.id = id;

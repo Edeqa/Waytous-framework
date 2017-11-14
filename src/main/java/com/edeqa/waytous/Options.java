@@ -89,7 +89,7 @@ public class Options {
             string.append((char)c);
         }
 
-        Matcher m = Pattern.compile("\\/\\*[\\s\\S]*?\\*\\/").matcher(string);
+        Matcher m = Pattern.compile("/\\*[\\s\\S]*?\\*/").matcher(string);
         string = string.replace(0, string.length(), m.replaceAll(""));
         json = new JSONObject(string.toString());
 

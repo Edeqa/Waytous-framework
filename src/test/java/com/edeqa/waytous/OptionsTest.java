@@ -207,7 +207,7 @@ public class OptionsTest {
 
     @Test
     public void getAppLink() throws Exception {
-        assertEquals("http://waytous.net", OPTIONS.getAppLink());
+        assertTrue(OPTIONS.getAppLink().startsWith("http://"));
     }
 
     @Test

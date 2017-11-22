@@ -8,7 +8,8 @@ package com.edeqa.waytous;
 
 @SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
 public class Firebase {
-    public static final String SECTION_GROUPS = "_groups",
+    public static final String
+            SECTION_GROUPS = "_g",
             ACTIVE = "active",
             CHANGED = "ch",
             COLOR = "color",
@@ -18,7 +19,7 @@ public class Firebase {
             KEYS = "k", // keys (users/keys)
             NAME = "name",
             OPTIONS = "o", // options
-            ORDER = "n", // order (users/order)
+            QUEUE = "q", // queue (users/queue)
             PERSISTENT = "persistent",
             PRIVATE = "p", // private
             PUBLIC = "b", // public
@@ -29,7 +30,7 @@ public class Firebase {
             USERS = "u", // users
             WELCOME_MESSAGE = "welcome-message",
 
-    SECTION_STAT = "_stat",
+    SECTION_STAT = "_s",
             STAT_TOTAL = "total",
             STAT_BY_DATE = "by-date",
             STAT_GROUPS_CREATED_PERSISTENT = "gp",
@@ -48,7 +49,7 @@ public class Firebase {
             STAT_ACCOUNTS_CREATED = "cc",
             STAT_ACCOUNTS_DELETED = "cd",
 
-    SECTION_USERS = "_users",
+    SECTION_USERS = "_u",
             HISTORY = "h",
             MODE = "m",
             TERMS_OF_SERVICE_CONFIRMED = "tos-confirmed",

@@ -19,7 +19,7 @@ Step 1. Add the JitPack repository in your root build.gradle at the end of repos
 Step 2. Add the dependency in the app's build.gradle:
 
     dependencies {
-        compile 'com.github.edeqa:waytous-framework:1.41'
+        compile 'com.github.edeqa:waytous-framework:1.50'
     }
 
 ### Maven
@@ -47,6 +47,7 @@ See the [Javadoc](https://edeqa.github.io/Waytous-framework/) to learn more abou
 
 ## History
 
+1.50 - SignProvider
 1.41 - initial version for Waytous 1.41
 
 ## License

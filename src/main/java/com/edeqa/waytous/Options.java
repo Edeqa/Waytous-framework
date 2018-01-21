@@ -7,6 +7,8 @@
 package com.edeqa.waytous;
 
 import com.edeqa.helpers.Mime;
+import com.edeqa.helpers.MimeType;
+import com.edeqa.helpers.MimeTypes;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -31,6 +33,7 @@ public class Options {
     private final static Logger LOGGER = Logger.getLogger(Options.class.getName());
 
     private JSONObject json;
+    private MimeTypes mimeTypes;
 
     public Options(String[] args) {
 
@@ -117,102 +120,12 @@ public class Options {
             json.put("web_root_directory", path);
         }
 
-
-
-        // add default MIME-types if they are not added in options-file
+        setMimeTypes(new MimeTypes().useDefault());
 
         JSONArray types = json.getJSONArray("types");
-
-        ArrayList<HashMap<String, Serializable>> commonTypes = new ArrayList<>();
-        HashMap<String,Serializable> type = new HashMap<>();
-        type.put("type", "html");
-        type.put("mime", Mime.TEXT_HTML);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "js");
-        type.put("mime", Mime.APPLICATION_JAVASCRIPT);
-        type.put("text", true);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "css");
-        type.put("mime", Mime.TEXT_CSS);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "xml");
-        type.put("mime", Mime.APPLICATION_XML);
-        type.put("text", true);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("name", "manifest.json");
-        type.put("mime", Mime.APPLICATION_X_WEB_APP_MANIFEST_JSON);
-        type.put("text", true);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "json");
-        type.put("mime", Mime.APPLICATION_JSON);
-        type.put("text", true);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "gif");
-        type.put("mime", Mime.IMAGE_GIF);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "png");
-        type.put("mime", Mime.IMAGE_PNG);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "jpg");
-        type.put("mime", Mime.IMAGE_JPG);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "ico");
-        type.put("mime", Mime.IMAGE_ICO);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "svg");
-        type.put("mime", Mime.IMAGE_SVG_XML);
-        type.put("text", true);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "mp3");
-        type.put("mime", Mime.AUDIO_MP3);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "ogg");
-        type.put("mime", Mime.AUDIO_OGG);
-        commonTypes.add(type);
-
-        type = new HashMap<>();
-        type.put("type", "m4r");
-        type.put("mime", Mime.AUDIO_AAC);
-        commonTypes.add(type);
-
-        for(int i=0; i<types.length(); i++) {
+        for(int i = 0; i < types.length(); i++) {
             JSONObject o = types.getJSONObject(i);
-            for(HashMap<String,Serializable> x:commonTypes){
-                if(x.containsKey("type") && o.has("type") && (x.get("type")).equals(o.getString("type"))) {
-                    commonTypes.remove(x);
-                    break;
-                } else if(x.containsKey("name") && o.has("name") && (x.get("name")).equals(o.getString("name"))) {
-                    commonTypes.remove(x);
-                    break;
-                }
-            }
-        }
-        for(HashMap<String,Serializable> x:commonTypes){
-            types.put(new JSONObject(x));
+            getMimeTypes().add(new MimeType(o));
         }
 
     }
@@ -408,4 +321,11 @@ public class Options {
         return json.getJSONArray("pages");
     }
 
+    public MimeTypes getMimeTypes() {
+        return mimeTypes;
+    }
+
+    public void setMimeTypes(MimeTypes mimeTypes) {
+        this.mimeTypes = mimeTypes;
+    }
 }

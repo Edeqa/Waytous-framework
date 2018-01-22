@@ -8,11 +8,7 @@ package com.edeqa.waytous;
 
 @SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
 public class Rest {
-    public static final String STATUS = "status",
-        SUCCESS = "success",
-        ERROR = "error",
-        REASON = "reason",
-        MESSAGE = "message",
+    public static final String
         REQUEST = "request",
         GROUP_ID = "group_id",
         UID = "uid",

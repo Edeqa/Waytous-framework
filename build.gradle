@@ -1,17 +1,22 @@
-apply plugin: 'java'
+apply plugin: "java"
 
 repositories {
     jcenter()
     maven { url "https://jitpack.io" }
-    maven { url 'https://maven.fabric.io/public' }
+    maven { url "https://maven.fabric.io/public" }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'org.json:json:20171018'
-    compile 'org.slf4j:slf4j-nop:+'
+    compile fileTree(dir: "libs", include: ["*.jar"])
+    compile "org.json:json:20171018"
+    compile "org.slf4j:slf4j-nop:+"
     compile "org.slf4j:slf4j-simple:+"
-    compile 'com.github.edeqa:helpers:+'
+    compile "com.github.edeqa:helpers:+"
+    compile (project(':Edequate')) {
+        exclude group: 'org.json', module: 'json'
+        exclude group: 'com.google.guava', module: 'guava'
+        exclude group: 'javax.servlet', module: 'javax.servlet-api'
+    }
 }
 
 task javaDoc (type: Javadoc) {

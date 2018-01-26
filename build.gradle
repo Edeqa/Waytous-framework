@@ -11,7 +11,7 @@ dependencies {
     compile "org.json:json:20171018"
     compile "org.slf4j:slf4j-nop:+"
     compile "org.slf4j:slf4j-simple:+"
-    compile "com.github.edeqa:helpers:+"
+    compile "com.github.edeqa:helpers:1.5"
     compile (project(':Edequate')) {
         exclude group: 'org.json', module: 'json'
         exclude group: 'com.google.guava', module: 'guava'

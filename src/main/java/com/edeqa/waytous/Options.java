@@ -36,7 +36,7 @@ public class Options {
 
         File file = new File("options.json");
 
-        /*if(args.length != 0 && ("true".equals(args[0]) || "false".equals(args[0]))) { // call from android version
+        /*if(args.length != 0 && ("true".equals(args[0]) || "false".equals(args[0]))) { // onEvent from android version
             switch(args[0]) {
                 case "true": // android debug mode
                     break;

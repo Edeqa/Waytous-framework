@@ -6,7 +6,7 @@
  */
 package com.edeqa.waytous;
 
-@SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
+@SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess", "unused"})
 public class Constants {
 
     public static Options OPTIONS;

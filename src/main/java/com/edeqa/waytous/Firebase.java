@@ -6,7 +6,7 @@
  */
 package com.edeqa.waytous;
 
-@SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess"})
+@SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess", "unused"})
 public class Firebase {
     public static final String
             SECTION_GROUPS = "_g",

@@ -17,6 +17,7 @@ public class Firebase {
             DELAY_TO_DISMISS = "delay-to-dismiss",
             DISMISS_INACTIVE = "dismiss-inactive",
             KEYS = "k", // keys (users/keys)
+            LIMIT_USERS = "limit-users",
             NAME = "name",
             OPTIONS = "o", // options
             QUEUE = "q", // queue (users/queue)

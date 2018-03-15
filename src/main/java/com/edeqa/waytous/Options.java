@@ -189,12 +189,9 @@ public class Options {
             jsonSample.put("pages", jsonPages);
 
             writer.write(jsonSample.toString(4));
-            writer.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         LOGGER.severe(String.format("Sample options file was generated into %s.\nModify it using your custom options and run again.\n", file.getAbsolutePath()));
     }
 

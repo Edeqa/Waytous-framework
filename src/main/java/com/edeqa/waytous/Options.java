@@ -148,7 +148,7 @@ public class Options {
             jsonSample.put("firebase_config",jsonFirebaseConfig);
 
             jsonSample.put("admin_login","admin");
-            jsonSample.put("admin_password","password");
+            jsonSample.put("admin_password_hash","password_hash");
             jsonSample.put("server_host","localhost");
             jsonSample.put("http_port",8080);
             jsonSample.put("http_port_masked",8080);
@@ -209,14 +209,6 @@ public class Options {
 
     public JSONObject getFirebaseConfig() {
         return json.getJSONObject("firebase_config");
-    }
-
-    public String getLogin() {
-        return json.getString("admin_login");
-    }
-
-    public String getPassword() {
-        return json.getString("admin_password");
     }
 
     public String getServerHost() {

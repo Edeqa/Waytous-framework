@@ -19,7 +19,7 @@ Step 1. Add the JitPack repository in your root build.gradle at the end of repos
 Step 2. Add the dependency in the app's build.gradle:
 
     dependencies {
-        compile 'com.github.edeqa:waytous-framework:1.50'
+        compile 'com.github.edeqa:waytous-framework:1.61'
     }
 
 ### Maven
@@ -38,7 +38,7 @@ Step 2. Add the dependency:
     <dependency>
         <groupId>com.github.edeqa</groupId>
         <artifactId>waytous-framework</artifactId>
-        <version>1.41</version>
+        <version>1.61</version>
     </dependency>
 
 ## How to use
@@ -47,6 +47,7 @@ See the [Javadoc](https://edeqa.github.io/Waytous-framework/) to learn more abou
 
 ## History
 
+1.61 - fixes and improvements
 1.50 - SignProvider
 1.41 - initial version for Waytous 1.41
 

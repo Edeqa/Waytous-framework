@@ -6,7 +6,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created 11/11/17.
@@ -32,4 +32,16 @@ public class SignProviderTest {
 
     }
 
+    @Test
+    public void parse() {
+
+        assertEquals(SignProvider.FACEBOOK, SignProvider.parse("facebook.com"));
+        assertEquals(SignProvider.NONE, SignProvider.parse("anonymous"));
+        assertEquals(SignProvider.ADMIN, SignProvider.parse("admin"));
+        assertEquals(SignProvider.GOOGLE, SignProvider.parse("google.com"));
+        assertEquals(SignProvider.TWITTER, SignProvider.parse("twitter.com"));
+        assertEquals(SignProvider.PASSWORD, SignProvider.parse("password"));
+        assertEquals(SignProvider.NONE, SignProvider.parse(null));
+
+    }
 }

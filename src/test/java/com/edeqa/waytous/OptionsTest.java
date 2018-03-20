@@ -1,5 +1,8 @@
 package com.edeqa.waytous;
 
+import com.edeqa.helpers.MimeTypes;
+
+import org.json.JSONArray;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -197,7 +200,7 @@ public class OptionsTest {
 
     @Test
     public void getTypes() throws Exception {
-        assertTrue(OPTIONS.getTypes().toString().contains("mime"));
+        assertEquals(true, OPTIONS.getTypes() instanceof JSONArray);
     }
 
     @Test
@@ -215,4 +218,21 @@ public class OptionsTest {
         assertEquals("support@waytous.net", OPTIONS.getSupportEmail());
     }
 
+    @Test
+    public void getGoogleAnalyticsTrackingId() {
+        assertEquals(true, OPTIONS.getGoogleAnalyticsTrackingId().startsWith("UA-"));
+
+    }
+
+    @Test
+    public void getMimeTypes() {
+        assertEquals(true, OPTIONS.getMimeTypes() instanceof MimeTypes);
+    }
+
+    @Test
+    public void setMimeTypes() {
+        MimeTypes mimeTypes = new MimeTypes();
+        OPTIONS.setMimeTypes(mimeTypes);
+
+    }
 }

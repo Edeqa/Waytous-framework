@@ -114,16 +114,6 @@ public class OptionsTest {
     }
 
     @Test
-    public void getLogin() throws Exception {
-        assertTrue(OPTIONS.getLogin().length()>0);
-    }
-
-    @Test
-    public void getPassword() throws Exception {
-        assertTrue(OPTIONS.getPassword() != null);
-    }
-
-    @Test
     public void getServerHost() throws Exception {
         assertTrue(OPTIONS.getServerHost().length() > 5);
     }

@@ -33,7 +33,7 @@ public class Constants {
     public static final String REQUEST_MANUFACTURER = "manufacturer";
     public static final String REQUEST_OS = "os";
     public static final String REQUEST_KEY = "key";
-    public static final String REQUEST_SIGN_PROVIDER = "sign-provider";
+    public static final String REQUEST_SIGN_PROVIDER = "signProvider";
 
 // instances to/from server
     public static final String REQUEST_TRACKING = "tracking";

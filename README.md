@@ -19,7 +19,7 @@ Step 1. Add the JitPack repository in your root build.gradle at the end of repos
 Step 2. Add the dependency in the app's build.gradle:
 
     dependencies {
-        compile 'com.github.edeqa:waytous-framework:1.61'
+        compile 'com.github.edeqa:waytous-framework:2.63'
     }
 
 ### Maven
@@ -38,7 +38,7 @@ Step 2. Add the dependency:
     <dependency>
         <groupId>com.github.edeqa</groupId>
         <artifactId>waytous-framework</artifactId>
-        <version>1.61</version>
+        <version>2.63</version>
     </dependency>
 
 ## How to use

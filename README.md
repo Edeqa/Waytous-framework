@@ -34,7 +34,7 @@ Step 1. Add the JitPack repository to your build file:
     </repositories>
     
 Step 2. Add the dependency:
-
+ 
     <dependency>
         <groupId>com.github.edeqa</groupId>
         <artifactId>waytous-framework</artifactId>

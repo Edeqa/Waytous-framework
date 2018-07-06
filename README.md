@@ -47,6 +47,8 @@ See the [Javadoc](https://edeqa.github.io/Waytous-framework/) to learn more abou
 
 ## History
 
+2.63 - fixes and improvements
+
 1.61 - fixes and improvements
 
 1.50 - SignProvider
